@@ -34,6 +34,7 @@ $(function () {
         it('have valid urls', function () {
             var validUrls = true;
             allFeeds.forEach(feed => {
+                expect(feed.url).toBeDefined();
                 if (feed.url) {
                     try {
                         var url = new URL(feed.url);
@@ -55,6 +56,7 @@ $(function () {
         it('have valid names', function () {
             var validNames = true;
             allFeeds.forEach(feed => {
+                expect(feed.name).toBeDefined();
                 if (feed.name) {
                     if (feed.name === "") validNames = false;
                 } else {

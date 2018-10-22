@@ -76,7 +76,7 @@ $(function () {
          * hiding/showing of the menu element.
          */
         it('is hidden by default', function () {
-            var hidden = document.body.className.includes("menu-hidden");
+            var hidden = document.body.classList.contains("menu-hidden");
             expect(hidden).toBe(true);
         })
 
@@ -91,10 +91,10 @@ $(function () {
             var link = document.getElementsByClassName("menu-icon-link")[0]
 
             link.click();
-            if (document.body.className.includes("menu-hidden")) passes = false;
+            if (document.body.classList.contains("menu-hidden")) passes = false;
 
             link.click();
-            if (!document.body.className.includes("menu-hidden")) passes = false;
+            if (!document.body.classList.contains("menu-hidden")) passes = false;
 
             expect(passes).toBe(true);
         })
